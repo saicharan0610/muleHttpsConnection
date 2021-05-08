@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "5a6ff154-17d8-41bf-8f97-89c1c3cb33b4",
+		"name": "Https First Project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "httpsMainTrigger",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8099/httpSample",
+					"host": [
+						"localhost"
+					],
+					"port": "8099",
+					"path": [
+						"httpSample"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "httpsTrigger",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:8098/httpsSample",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8098",
+					"path": [
+						"httpsSample"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
