@@ -39,3 +39,12 @@ After creation of the certificate client.cer, we will populate our Truststore wi
 **keytool -import -v -trustcacerts -alias mule -file client.cer -keystore truststore.ts**
 
 Important points to be noted here is the key (mule), the certificate file (client.cer), and the name of the Truststore (truststore.ts). Upon execution of the command, it will ask for the password for the Truststore being created. You can choose anything you want.
+
+
+------------------------------------------------------
+For **My First Raml project**
+
+Important Urls: https://www.apisero.com/implementing-api-auto-discovery-for-mulesoft-application-deployed-to-cloudhub-and-on-premise/
+
+Anypoint Platform Urls: https://anypoint.mulesoft.com/cloudhub/#/console/home/applications/cloudhub/myfirstramlproj-v1-dev
+
