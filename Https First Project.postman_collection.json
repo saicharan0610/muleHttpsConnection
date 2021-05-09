@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "httpsMainTrigger",
+			"name": "httpsMainTriggerLocal",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -24,19 +24,60 @@
 			"response": []
 		},
 		{
-			"name": "httpsTrigger",
+			"name": "httpsTriggerLocal",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:8098/httpsSample",
+					"raw": "https://localhost:8091/httpsSample",
 					"protocol": "https",
 					"host": [
 						"localhost"
 					],
-					"port": "8098",
+					"port": "8091",
 					"path": [
 						"httpsSample"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dev Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://myfirsthttpsproj-v1-dev.us-e2.cloudhub.io/httpSample",
+					"protocol": "http",
+					"host": [
+						"myfirsthttpsproj-v1-dev",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"httpSample"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "demo Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "demotest-v1-dev.us-e2.cloudhub.io/demoSample",
+					"host": [
+						"demotest-v1-dev",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"demoSample"
 					]
 				}
 			},
