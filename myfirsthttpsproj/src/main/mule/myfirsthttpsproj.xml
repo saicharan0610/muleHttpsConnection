@@ -6,23 +6,7 @@
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
 http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd">
-	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="463f3464-49ee-4480-88e2-9303ebbb76b6" doc:description="http configuration listener">
-		<http:listener-connection host="0.0.0.0" port="8099" />
-	</http:listener-config>
-	<http:listener-config name="HTTPS_Listener_config" doc:name="HTTP Listener config" doc:id="8b99fa9e-5ce4-4999-b592-6c300b6311b5" doc:description="https configuration listener">
-		<http:listener-connection protocol="HTTPS" host="0.0.0.0" port="8098" >
-			<tls:context >
-				<tls:key-store type="jks" path="keyStore/keystore.jks" alias="mule" keyPassword="cBit2019" password="cBit2019" />
-			</tls:context>
-		</http:listener-connection>
-	</http:listener-config>
-	<http:request-config name="HTTPS_Request_configuration" doc:name="HTTP Request configuration" doc:id="838cfba0-437c-4ea2-889c-aaa8e35285c4" doc:description="call to https conponent">
-		<http:request-connection protocol="HTTPS" host="localhost" port="8098" >
-			<tls:context >
-				<tls:trust-store path="keyStore/truststore.ts" password="cBit2019" type="jks" insecure="true"/>
-			</tls:context>
-		</http:request-connection>
-	</http:request-config>
+	
 	<flow name="myFirstHttpProj_flow" doc:id="cf3357c6-fc80-47ef-927a-ccc0a4f12dc9" >
 		<http:listener doc:name="Listener" doc:id="71e84c12-871e-4644-91b3-f001c36e3e42" config-ref="HTTP_Listener_config" path="/httpSample"/>
 		<logger level="INFO" doc:name="infoLogger" doc:id="1926f551-c84c-4e17-ab79-2c66a554a04e" message="---http flow started---"/>

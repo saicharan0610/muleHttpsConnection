@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+<mule xmlns:tls="http://www.mulesoft.org/schema/mule/tls"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd 
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
 	<configuration-properties doc:name="Configuration properties" doc:id="91be9d1e-f7fd-40b9-a2fe-252d4046597e" file="properties/${env}-myFirstHttpsProj.properties" doc:description="All the Properties are defined here"/>
 	<global-property doc:name="Global Property" doc:id="c43c86e4-c849-46ef-a47f-3f6008f75c0c" name="env" value="dev" />
+
+<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="1cec2b55-aa47-4828-b569-c6027bc1c0bf" doc:description="http configuration listener">
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
+	<http:listener-config name="HTTPS_Listener_config" doc:name="HTTP Listener config" doc:id="680008be-b408-4d8b-b74c-3e0a88bd522d" doc:description="https configuration listener">
+		<http:listener-connection protocol="HTTPS" host="0.0.0.0" port="${https.port}" >
+			<tls:context >
+				<tls:key-store type="jks" path="keyStore/keystore.jks" alias="mule" keyPassword="cBit2019" password="cBit2019" />
+			</tls:context>
+		</http:listener-connection>
+	</http:listener-config>
+	<http:request-config name="HTTPS_Request_configuration" doc:name="HTTP Request configuration" doc:id="a3fc7f06-ccef-4364-8820-f184ce733df2" doc:description="call to https conponent">
+		<http:request-connection protocol="HTTPS" host="0.0.0.0" port="${https.port}" >
+			<tls:context >
+				<tls:trust-store path="keyStore/truststore.ts" password="cBit2019" type="jks" insecure="true"/>
+			</tls:context>
+		</http:request-connection>
+	</http:request-config>
 </mule>
