@@ -1,0 +1,11 @@
+#%RAML 1.0 ResourceType
+get:
+  is:
+    - transactionId
+  description:  This my first Raml resource get API
+  responses:
+    200:
+      body:
+        application/json:
+          example: !include ../patterns/responses/myFirstRamlresourceGetResponse.json
+            

@@ -1,0 +1,36 @@
+{
+	"info": {
+		"_postman_id": "19523d42-9648-4755-9bf8-1bdfaf109933",
+		"name": "Raml First project",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET-myFirstRamlResource",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "transactionId",
+						"value": "12344",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "myfirstramlproj-v1-dev.us-e2.cloudhub.io/api/myFirstramlResource",
+					"host": [
+						"myfirstramlproj-v1-dev",
+						"us-e2",
+						"cloudhub",
+						"io"
+					],
+					"path": [
+						"api",
+						"myFirstramlResource"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

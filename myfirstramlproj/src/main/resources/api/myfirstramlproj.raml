@@ -1,0 +1,18 @@
+#%RAML 1.0
+title: MyFirstRamlProj
+version: v1
+protocols:
+  - https
+  - http
+mediaType: 
+- application/json
+documentation:
+  - title: My First Raml with all Generics implemented
+    content:  !include libraries/documentation.md
+resourceTypes:
+  myFirstRamlresource: !include libraries/resources/myFirstRamlResource.raml
+traits:
+  transactionId: !include libraries/traits/transactionId.raml
+/myFirstramlResource:
+  type:
+    myFirstRamlresource
