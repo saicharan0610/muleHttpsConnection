@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
-<mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
-	<configuration-properties doc:name="Configuration properties" doc:id="91be9d1e-f7fd-40b9-a2fe-252d4046597e" file="properties/${env}-myFirstHttpsProj.properties" doc:description="All the Properties are defined here"/>
-	<global-property doc:name="Global Property" doc:id="c43c86e4-c849-46ef-a47f-3f6008f75c0c" name="env" value="dev" />
-</mule>
